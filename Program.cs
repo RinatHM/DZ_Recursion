@@ -1,30 +1,18 @@
-﻿//Задача 2: Напишите программу вычисления функции Аккермана с помощью рекурсии. 
-//Даны два неотрицательных числа m и n.
+﻿/*Задача 3: Задайте произвольный массив. 
+Выведете его элементы, начиная с конца. 
+Использовать рекурсию, не использовать циклы.*/
 
-int Ackermann(int m, int n)
-{
-    if (m == 0)
-    {
-        //Console.WriteLine($"if m=0, вернули n + 1");
-        return n + 1;
-    }
-    else if (n == 0)
-    {
-        //Console.WriteLine($"if m!=0 n=0, вернули Ackermann(m - 1, 1)");
-        return Ackermann(m - 1, 1);
-    }
-    else
-    {
-        //Console.WriteLine($"if m!=0 n!=0, вернули Ackermann(m, n-1)");
-        return Ackermann(m - 1, Ackermann(m, n - 1));
-    }
-}
 
-void Main()
+void RangeOfDigit(int n)
 {
-    int m = 3;
-    int n = 3;
-    int result = Ackermann(m, n);
-    Console.WriteLine($"Ackermann({m}, {n}) = {result}");
+    int[] massiv = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    if (n == massiv.Length)
+    {
+        //Console.WriteLine(massiv[n-1]);
+        return;
+    }
+    RangeOfDigit(n + 1);
+    Console.WriteLine(massiv[n]);
 }
-Main();
+RangeOfDigit(0);
+
